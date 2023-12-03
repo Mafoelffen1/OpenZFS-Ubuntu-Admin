@@ -83,9 +83,9 @@ If it boots, your are good.
 
 If not refer to one of the "chroot into your installed ZFS System" doc's (planned), depending on how your system is installed:
 Normal installation (Not ZFS-On-Root), with added ZFS zpools.
-ZFS-On-Root- Normal
-ZFS-On-Root- Encrypted. Manually installed in LUKS Containers.
-ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
-ZFS-On-Root- Encrypted- Ubuntu Installer systel Encrypted (Uses both LUKS locked encyption "key" to unlock Native encrypted zpool.)
+- ZFS-On-Root- Normal
+- ZFS-On-Root- Encrypted. Manually installed in LUKS Containers.
+- ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
+- ZFS-On-Root- Encrypted- Ubuntu Installer systel Encrypted (Uses both LUKS locked encyption "key" to unlock Native encrypted zpool.)
 
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
