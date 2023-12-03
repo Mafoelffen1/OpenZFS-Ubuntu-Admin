@@ -1,6 +1,6 @@
 ## How To Uninstall package 'zfs-dkms' And Survive
 
-Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fails to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it actually supports newer kernel versions.
+Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fails to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it actually supports newer kernel versions. Or when adding kernels from the Ubuntu mainline repo. 
 
 But note that... Canonical started adding the 'zfs' modules in-kernel, so package 'zfs-dkms' is no longer needed after 22.04.x. Package 'zfs-dkms' is no longer a default installed package, nor does it need to be there anymore.
 
