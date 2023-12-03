@@ -11,7 +11,7 @@ Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of 
 
 ## Reporting 
 
-If you are Ubuntu, You were affected by this (Upstream) bug: [zfs-dkms 2.1.5-1ubuntu6~22.04.2- Kernel module failed to build][1]
+If you are Ubuntu, You were affected by this (Upstream) bug: ["zfs-dkms 2.1.5-1ubuntu6~22.04.2- Kernel module failed to build"][1]
 
 Please go to that Bug Report at Launchpad.Net (or the specific Bug Report, in your relavent Distribution's Bug Tracking System) to join as affected. This is important so that the upstream bug can be corrected. These instructions are just a work-around to be able to update euntil the underlying problem can be resolved.
 
