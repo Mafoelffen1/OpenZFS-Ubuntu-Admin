@@ -42,23 +42,34 @@ Get Documentation of where your system is now. Write the URL of where this repor
 ## Step 2: Remove package 'zfs-dkms'
 
 Do this first (Go not stop or reboot during this process!!!)
-    sud0 su -
+
+    sudo su -
     apt update
-    apt remove --purge zfs-dkms
+    apt remove --purge zfs-dkm
+    
 Important = If you are still running, use this. If not running, and from a LiveUSB, reset thsi to the target kernel version
+    
     KVERSION=$(uname -r)
+
 reinstall target kernel
+
     sudo apt install reinstall linux-image-$KVERSION linux-header-$KVERSION linux-module-$KVERSION linux-module-extra-$KVERSION 
     apt install reinstall zfsutils-linux
+
 Reinstall Grub2
+
     apt install --yes \
     grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
     shim-signed zfs-initramfs
     grub-install --target=x86_64-efi --efi-directory=/boot/efi \
     --bootloader-id=ubuntu --recheck --no-floppy
+
 Rebuild initramfs images. Remember this command to rebuild all the modules...
+
     apt update-intramfs -c -k all
+
 Update Grub2
+    
     update-grub
 
 
