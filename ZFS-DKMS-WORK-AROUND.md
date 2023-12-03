@@ -1,6 +1,6 @@
 ## ZFS Uninstall package 'zfs-dkms' And Survive
 
-Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fail to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and does not recognise that it support newer kernels.
+Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fail to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it supports newer kernel versions.
 ## Details
 
 - When this happens, it gets a dpkg error that prevents building the ZFS modules: icp.ko  spl.ko  zavl.ko  zcommon.ko  zfs.ko  zlua.ko  znvpair.ko  zunicode.ko  zzstd.ko... in in the /lib/modules/<kernel_version>/kernel/zfs/ folder, returning an Error code 10.
