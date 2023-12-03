@@ -2,7 +2,7 @@
 ZFS Systems Admin &amp; Other ZFS Support Tutorials
 
 # Purpose:
-To document ZFS How-To's and Work-Around's
+To document ZFS Systems Adminstation, How-To's and Work-Around's. So that people who support ZFS on Linux, have a centralised location to find answers in one location. this is geared amainly from expereince of ZFS from openSolaris, Solaris... And Ubuntu from zfs-fuse, through OpenZFS on Ubuntu.
 
 # Links
 [Work-Around to Uninstall package 'zfs-dkms' and Survive.][1] Is meant to get around [Launchpad Bug #2044630][2]
