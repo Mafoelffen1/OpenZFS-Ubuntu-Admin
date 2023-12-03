@@ -1,15 +1,15 @@
 ## How To Uninstall package 'zfs-dkms' And Survive
 
-Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fail to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it supports newer kernel versions.
+Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fails to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it actually supports newer kernel versions.
 
-But... Canonical started adding the 'zfs' modules in-kernel, so package 'zfs-dkms' is no longer needed after 22.04.x. Package 'zfs-dkms' is no longer a default installed package, nor does it need to be there anymore.
+But note that... Canonical started adding the 'zfs' modules in-kernel, so package 'zfs-dkms' is no longer needed after 22.04.x. Package 'zfs-dkms' is no longer a default installed package, nor does it need to be there anymore.
 
 ## Details
-
-- When this happens, it gets a dpkg error that prevents building the ZFS modules: icp.ko  spl.ko  zavl.ko  zcommon.ko  zfs.ko  zlua.ko  znvpair.ko  zunicode.ko  zzstd.ko... in in the /lib/modules/<kernel_version>/kernel/zfs/ folder, returning an Error code 10.
+If package zfs-dkms is installed, it will eventaully fail occasionally.
+- When package zfs-dkms fials to build kernel modules, it gets a dpkg error that prevents building the ZFS modules: icp.ko  spl.ko  zavl.ko  zcommon.ko  zfs.ko  zlua.ko  znvpair.ko  zunicode.ko  zzstd.ko... in in the /lib/modules/<kernel_version>/kernel/zfs/ folder, returning an Error code 10.
 - When it does that, it further prevents any other system updates.
 - The ZFS modules will still build without package 'zfs-dkms', manually with package 'zfsutils-linux', and update-intiramfs.
-- Uninstalling 'zfs-dkms' itself, without doing anything else, results in a non-bootable system. So other things need to go along with that, so that that doesn't happen. Or if that does happen, the user needs instructions on how to recover from that.
+- IMPORTANT-- Uninstalling 'zfs-dkms' itself, without doing anything else, results in a non-bootable system. So other things need to go along with that, so that that doesn't happen. Or if that does happen (resultig in a non-bootable system), the user needs instructions on how to recover from that.
 
 
 ## Reporting 
@@ -42,6 +42,8 @@ Get Documentation of where your system is now. Write the URL of where this repor
     sudo apt update
     
     sudo apt install system-info --details
+
+That report, started with those options, will add details related to ZFS, that you may need if something goes wrong. 
 
 
 ## Get Good External Backups.
