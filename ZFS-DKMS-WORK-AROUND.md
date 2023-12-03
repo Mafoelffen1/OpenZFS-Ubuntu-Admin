@@ -35,7 +35,9 @@ You are aware of the risk and accpet you are resposnisbile for waht happens.
 Get Documentation of where your system is now. Write the URL of where this report uploads to: 
 
     sudo add-apt-repository ppa:mafoelffen/system-info
+    
     sudo apt update
+    
     sudo apt install system-info --details
 
 
@@ -49,7 +51,9 @@ Get Documentation of where your system is now. Write the URL of where this repor
 Do this first (Go not stop or reboot during this process!!!)
 
     sudo su -
+    
     apt update
+    
     apt remove zfs-dkms
     
 Important = If you are still running, use this. If not running, and from a LiveUSB, reset thsi to the target kernel version
@@ -59,6 +63,7 @@ Important = If you are still running, use this. If not running, and from a LiveU
 reinstall target kernel
 
     sudo apt install reinstall linux-image-$KVERSION linux-header-$KVERSION linux-module-$KVERSION linux-module-extra-$KVERSION 
+    
     apt install reinstall zfsutils-linux
 
 Reinstall Grub2
@@ -66,6 +71,7 @@ Reinstall Grub2
     apt install --yes \
     grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
     shim-signed zfs-initramfs
+    
     grub-install --target=x86_64-efi --efi-directory=/boot/efi \
     --bootloader-id=ubuntu --recheck --no-floppy
 
