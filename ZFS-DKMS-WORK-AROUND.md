@@ -50,7 +50,7 @@ Do this first (Go not stop or reboot during this process!!!)
 
     sudo su -
     apt update
-    apt remove --purge zfs-dkm
+    apt remove zfs-dkms
     
 Important = If you are still running, use this. If not running, and from a LiveUSB, reset thsi to the target kernel version
     
