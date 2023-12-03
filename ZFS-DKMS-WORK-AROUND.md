@@ -82,7 +82,7 @@ Update Grub2
 If it boots, your are good.
 
 If not refer to one of the "chroot into your installed ZFS System" doc's (planned), depending on how your system is installed:
-Normal installation (Not ZFS-On-Root), with added ZFS zpools.
+- Normal installation (Not ZFS-On-Root), with added ZFS zpools.
 - ZFS-On-Root- Normal
 - ZFS-On-Root- Encrypted. Manually installed in LUKS Containers.
 - ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
