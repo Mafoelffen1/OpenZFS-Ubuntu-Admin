@@ -94,4 +94,8 @@ If not refer to one of the "chroot into your installed ZFS System" doc's (planne
 - ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
 - ZFS-On-Root- Encrypted- Ubuntu Installer systel Encrypted (Uses both LUKS locked encyption "key" to unlock Native encrypted zpool.)
 
+If you reboot and it ends at an initramfs prompt go here for instructions:
+
+If you reboot and it ends at a root maintenance prompt go here for instructions:
+
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
