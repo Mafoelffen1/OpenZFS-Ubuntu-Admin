@@ -51,11 +51,11 @@ reinstall target kernel
     sudo apt install reinstall linux-image-$KVERSION linux-header-$KVERSION linux-module-$KVERSION linux-module-extra-$KVERSION 
     apt install reinstall zfsutils-linux
 Reinstall Grub2
-        apt install --yes \
-      grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
-      shim-signed zfs-initramfs
+    apt install --yes \
+    grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
+    shim-signed zfs-initramfs
     grub-install --target=x86_64-efi --efi-directory=/boot/efi \
-      --bootloader-id=ubuntu --recheck --no-floppy
+    --bootloader-id=ubuntu --recheck --no-floppy
 Rebuild initramfs images. Remember this command to rebuild all the modules...
     apt update-intramfs -c -k all
 Update Grub2
