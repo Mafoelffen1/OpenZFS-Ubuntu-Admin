@@ -1,6 +1,9 @@
-## ZFS Uninstall package 'zfs-dkms' And Survive
+## How To Uninstall package 'zfs-dkms' And Survive
 
 Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fail to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it supports newer kernel versions.
+
+But... Canonical started adding the 'zfs' modules in-kernel, so package 'zfs-dkms' is no longer needed after 22.04.x. Package 'zfs-dkms' is no longer a default installed package, nor does it need to be there anymore.
+
 ## Details
 
 - When this happens, it gets a dpkg error that prevents building the ZFS modules: icp.ko  spl.ko  zavl.ko  zcommon.ko  zfs.ko  zlua.ko  znvpair.ko  zunicode.ko  zzstd.ko... in in the /lib/modules/<kernel_version>/kernel/zfs/ folder, returning an Error code 10.
@@ -18,7 +21,7 @@ Please go to that Bug Report at Launchpad.Net (or the specific Bug Report, in yo
 
 ## Decide What You Can Live With.
 
-This work-around involved risk. That risk may involve resulting in a non-booting system. This tutorila will ink to other documents that will help you recover from those, if that happens. This decision to use this tutorial may leverage whether: 
+This work-around involves risk. That risk may involve resulting in a non-booting system. This tutorila will ink to other documents that will help you recover from those, if that happens. This decision to use this tutorial may leverage whether: 
 - Whether you are ZFS-On-Root. If not, then there is less risk of being non-bootable on reboot.
 - Whether ou can live with not applying updates for awhile 
 - Whether you can follow technical instructions
