@@ -82,4 +82,5 @@ ZFS-On-Root- Normal
 ZFS-On-Root- Encrypted. Manually installed in LUKS Containers.
 ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
 ZFS-On-Root- Encrypted- Ubuntu Installer systel Encrypted (Uses both LUKS locked encyption "key" to unlock Native encrypted zpool.)
+
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
