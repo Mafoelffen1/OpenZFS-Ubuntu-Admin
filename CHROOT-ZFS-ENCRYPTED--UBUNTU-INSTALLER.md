@@ -116,7 +116,7 @@ Check the layout and mounts:
 
     zfs list
 
-Output of this should be similar, with differernt UID's ad user name.
+Output of this should be similar, with differernt UID's and user name.
 
     zfs mount $(zfs list | grep -m1 -e '^rpool\/ROOT\/ubuntu_' | awk '{print $1}' )
 
