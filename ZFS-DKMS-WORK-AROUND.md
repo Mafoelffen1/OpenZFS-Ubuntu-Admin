@@ -86,18 +86,7 @@ But if you reboot right now, it would be a non-booter... So go on.
 
     apt install --reinstall --yes zfsutils-linux
 
-Reinstall Grub2
-
-    apt install --reinstall --yes \
-    grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
-    shim-signed zfs-initramfs
-    
-    grub-install --target=x86_64-efi --efi-directory=/boot/efi \
-    --bootloader-id=ubuntu --recheck --no-floppy
-
 Rebuild initramfs images. Remember this command to rebuild all the modules...
-
-Either do this for the current kernel version
 
     update-initramfs -c -k all
 
@@ -105,6 +94,7 @@ Update Grub2
     
     update-grub
 
+Powerdown...
 
 ## Step 3: Reboot and Continue
 If will boot to a root mainatance prompt. Do not panic. Press the <Enter> key to continue to the prompt.
@@ -117,7 +107,7 @@ If will boot to a root mainatance prompt. Do not panic. Press the <Enter> key to
 
 Continue for any other pools you have. For some reason, I found that it seems to export all pools except rpool. rpool wil lsay it already exists.
 
-Poweroff to shut it down "cold".... Boot it up.
+Poweroff by shutting it down "cold".... Boot it up.
 
 
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
