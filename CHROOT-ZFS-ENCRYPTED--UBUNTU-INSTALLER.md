@@ -1,4 +1,4 @@
-## How To Chroot into an Ubuntu ZFS-On-Root: Ubuntu Installer
+## How To Chroot into an Ubuntu ZFS-On-Root: Encrypted, Ubuntu Installer
 
 Target systems are Debian Based; Tested on Ubuntu Systems. Sometimes updates of package 'zfs-dkms' fails to build the zfs modules, from a regression issue, where the code checks for supported kernel versions, and it does not recognise that it actually supports newer kernel versions. Or when adding kernels from the Ubuntu mainline repo. 
 
