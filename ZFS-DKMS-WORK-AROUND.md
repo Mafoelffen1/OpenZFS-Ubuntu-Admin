@@ -104,5 +104,7 @@ Continue for any other pools you have. For some reason, I found that it seems to
 
 Poweroff by shutting it down "cold".... Boot it up.
 
+## Conclusion / Further
+If you do not need the extra features to continue using zfs-dkms, nothing firther is needed. the modules are inside of normal channel Ubuntu kernels. If you do need 'zfs'dkms', then wait fro the above noted Bug Report to get resolved before reinstalling it. 
 
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
