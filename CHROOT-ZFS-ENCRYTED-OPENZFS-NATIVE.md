@@ -23,11 +23,9 @@ bpool connot presently be encyted, becaseu Grub2 cannot find things inside of a 
 
 Get Documentation of where your system is now. Write the URL of where this report uploads to: 
 
-    sudo add-apt-repository ppa:mafoelffen/system-info
-    
-    sudo apt update
-    
-    sudo apt install system-info --details
+    wget -N -t 5 -T 10 https://github.com/UbuntuForums/system-info/raw/main/system-info && \
+    chmod +x system-info && \
+    ./system-info
 
 That report, started with those options, will add details related to ZFS, that you may need to adjust things in this documetnation to what may be different on your system.
 
