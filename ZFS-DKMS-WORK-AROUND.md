@@ -113,6 +113,10 @@ If will boot to a root mainatance prompt. Do not panic. Press the <Enter> key to
 
     zpool import -f bpool
 
+    zfs mount -a
+
+Continue for any other pools you have. For some reason, I found that it seems to export all pools except rpool. rpool wil lsay it already exists.
+
 Poweroff to shut it down "cold".... Boot it up.
 
 
