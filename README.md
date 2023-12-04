@@ -7,7 +7,7 @@ To document ZFS Systems Adminstation, How-To's and Work-Around's. So that people
 # Links To Content
 [How to Uninstall package 'zfs-dkms' and Survive.][1] Is meant to get around [Launchpad Bug #2044630][2]
 
-$ Chroot into ZFS-On_Root Systems:
+# Chroot into ZFS-On_Root Systems:
 - How To Chroot into an Ubuntu ZFS-On-Root: Ubuntu, Not Encrytpted
 - How to chroot Into an Ubuntu ZFS-On-Root: Ubuntu (OpenZFS), Encrypted LUKS, manually installed. 
 - How to chroot Into an Ubuntu ZFS-On-Root: Ubuntu (OpenZFS), Native ZFS Encryption, manually installed. 
