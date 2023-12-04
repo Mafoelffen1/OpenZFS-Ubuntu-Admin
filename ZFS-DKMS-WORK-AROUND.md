@@ -22,6 +22,7 @@ Please go to that Bug Report at Launchpad.Net (or the specific Bug Report, in yo
 ## Decide What You Can Live With.
 
 This work-around involves risk. That risk may involve resulting in a non-booting system. This tutorila will ink to other documents that will help you recover from those, if that happens. This decision to use this tutorial may leverage whether: 
+- Whether you really need to use zfs-dkms any more... It is a package that is not longer need in current Ubuntu. At least verified from 22.04.x on.
 - Whether you are ZFS-On-Root. If not, then there is less risk of being non-bootable on reboot.
 - Whether ou can live with not applying updates for awhile 
 - Whether you can follow technical instructions
@@ -60,20 +61,34 @@ Do this first (Go not stop or reboot during this process!!!)
     apt update
     
     apt remove zfs-dkms
-    
-Important = If you are still running, use this. If not running, and from a LiveUSB, reset thsi to the target kernel version
-    
-    KVERSION=$(uname -r)
 
-reinstall target kernel
+Do not use remove --purge. For some reason, doing that removes more, which is harder to recover from. (requires more steps.)
 
-    sudo apt install reinstall linux-image-$KVERSION linux-header-$KVERSION linux-module-$KVERSION linux-module-extra-$KVERSION 
+Important = If you are still running, use this. If not running, and from a LiveUSB, reset this to the target kernel version. This searches in /boot for any installed kernel, and builds an array, populated with those versions.
     
-    apt install reinstall zfsutils-linux
+    KVERSIONS=$(ls /boot/initrd.img-* | sed 's/\/boot\/initrd\.img\-//g')
+
+Reinstall target kernel headers. You need at least the target linux-header-* package to be able to build kernel modules. I would look at all the active kernels, and at least install those Linux header packages for this.
+
+    for KVERSION in ${KVERSIONS[@]};
+    do
+    apt install --reinstall --yes linux-image-$KVERSION linux-headers-$KVERSION \
+    linux-modules-$KVERSION linux-modules-extra-$KVERSION;
+    done
+
+This does return messages similar to this during the process:
+
+    /etc/kernel/header_postinst.d/dkms:
+    * dkms: running auto installation service for kernel 6.2.0-26-generic
+    ...done.
+
+But if you reboot right now, it would be a non-booter... So go on.
+
+    apt install --reinstall --yes zfsutils-linux
 
 Reinstall Grub2
 
-    apt install --yes \
+    apt install --reinstall --yes \
     grub-efi-amd64 grub-efi-amd64-signed linux-image-generic \
     shim-signed zfs-initramfs
     
@@ -82,25 +97,23 @@ Reinstall Grub2
 
 Rebuild initramfs images. Remember this command to rebuild all the modules...
 
-    apt update-intramfs -c -k all
+Either do this for the current kernel version
+
+    update-initramfs -c -k all
 
 Update Grub2
     
     update-grub
 
 
-## Step 3: Reboot and Test
-If it boots, your are good.
+## Step 3: Reboot and Continue
+If will boot to a root mainatance prompt. Do not panic. Press the <Enter> key to continue to the prompt.
 
-If not refer to one of the "chroot into your installed ZFS System" doc's (planned), depending on how your system is installed:
-- Normal installation (Not ZFS-On-Root), with added ZFS zpools.
-- ZFS-On-Root- Normal
-- ZFS-On-Root- Encrypted. Manually installed in LUKS Containers.
-- ZFS-On-Root- Encrypted- Manually installed as native ZFs encrypted pools.
-- ZFS-On-Root- Encrypted- Ubuntu Installer systel Encrypted (Uses both LUKS locked encyption "key" to unlock Native encrypted zpool.)
+    zpool import -f rpool
 
-If you reboot and it ends at an initramfs prompt go here for instructions:
+    zpool import -f bpool
 
-If you reboot and it ends at a root maintenance prompt go here for instructions:
+Poweroff to shut it down "cold".... Boot it up.
+
 
 [1]: https://bugs.launchpad.net/ubuntu/+source/zfs-linux/+bug/2044630
