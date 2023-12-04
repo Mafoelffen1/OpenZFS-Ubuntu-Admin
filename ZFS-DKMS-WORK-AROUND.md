@@ -60,9 +60,7 @@ Do this first (Go not stop or reboot during this process!!!)
     
     apt update
     
-    apt remove zfs-dkms
-
-Do not use remove --purge. For some reason, doing that removes more, which is harder to recover from. (requires more steps.)
+    apt remove --purge zfs-dkms
 
 Important = If you are still running, use this. If not running, and from a LiveUSB, reset this to the target kernel version. This searches in /boot for any installed kernel, and builds an array, populated with those versions.
     
